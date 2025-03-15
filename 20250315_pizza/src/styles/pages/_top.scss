@@ -1,0 +1,52 @@
+@use 'abstracts/_variables.scss' as *;
+.hero {
+  position: relative;
+  max-width: $content-width;
+  margin: 0 auto;
+
+  &__content {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    text-align: center;
+    color: $primary-color;
+    width: 100%;
+    margin: 64px auto 0;
+  }
+
+  &__title {
+    @include font-size("xxxl");
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__decription {
+    @include font-size("md");
+    font-weight: 700;
+    color: $text-color;
+    letter-spacing: 1.5px;
+  }
+
+  &__image {
+    position: relative;
+    margin: 0 auto;
+    max-width: $content-width;
+    width: 100%;
+    height: 160vh;
+    overflow: hidden;
+
+   & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // 画像を枠いっぱいにフィットさせる
+      object-position: center top;
+      // transform: scale(1.2);
+    }
+  }
+}
+
+
+
+.message,.content{
+  display: none;
+}

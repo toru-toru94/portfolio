@@ -1,4 +1,4 @@
-@use '_variables.scss' as *;
+@use 'abstracts/_variables.scss' as *;
 
 .footer{
   color: $secondary-color;
@@ -8,6 +8,7 @@
   margin: 0 auto;
   text-align: center;
   padding: 100px 0;
+  // display: none;
 
 // 住所エリア
   &__address{
