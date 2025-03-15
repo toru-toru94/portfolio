@@ -1,0 +1,86 @@
+@use '_variables.scss' as *;
+
+.footer{
+  color: $secondary-color;
+  // background-color: $primary-color;
+  max-width: $content-width;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 100px 0;
+
+// 住所エリア
+  &__address{
+    &-text{
+      @include font-size("sm");
+      line-height: 0.875rem;
+      font-weight: 400;
+    }
+
+  }
+
+  // SNSエリア
+  &__sns{
+    display: flex;
+    justify-content: center;
+    column-gap: 12px;
+
+    &-box{
+      width: 64px;
+      height: 64px;
+      background-color: $secondary-color;
+      color: $primary-color;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+  }
+
+  //フッターメニュー
+  &__nav{
+    display: flex;
+    // justify-content: left;
+    align-items: flex-start;
+    width: 75%;
+    padding: 32px 0;
+    margin: 0 auto;
+
+    &-list{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    &-item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include font-size("sm");
+
+      &::before{
+        content: "";
+        display: inline-block;
+        background-color: $secondary-color;
+        border-radius: 50%;
+        margin-right: 5px;
+        width: 5px;
+        height: 5px;
+      }
+    }
+  }
+
+
+  //コピーライト
+  &__copy{
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+}

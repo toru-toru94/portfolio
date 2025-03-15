@@ -1,0 +1,63 @@
+@use 'sass:map';
+
+// scss/_variables.scss
+
+// カラー
+$primary-color: #df2a1a;
+$secondary-color: #FFF;
+// $background-color: #FFF;
+$text-color: #333;
+
+// フォント
+// $font: 'Montserrat Alternates', Noto Sans JP ,sans-serif;
+$font-en: 'Montserrat Alternates', sans-serif;
+$font-ja: 'Noto Sans JP', sans-serif;
+
+// フォントサイズ
+$font-sizes: (
+  "sm": 0.875rem, // 14px
+  "md": 1rem, // 16px
+  "lg": 1.25rem, // 20px
+  "xl": 1.5rem, // 24px
+  "xxl": 2rem // 32px
+);
+
+@mixin font-size($size) {
+  font-size: map.get($font-sizes, $size);
+  @content;
+}
+
+//ブレークポイント
+$breakpoints:(
+  ssm: 360px,
+  sm: 580px,
+  md: 768px,
+  lg: 992px,
+  xl: 1280px
+);
+@mixin min($breakpoint){
+  @media (width >= #{map.get($breakpoints, $breakpoint)}){
+    @content;
+  }
+}
+
+@mixin max($breakpoint){
+  @media (width < #{map.get($breakpoints, $breakpoint)}){
+    @content
+  }
+}
+
+$content-width:375px;
+
+// 余白
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// 公開（他のファイルで使えるようにする）
+// :export {
+//   primary-color: $primary-color;
+//   secondary-color: $secondary-color;
+// }
