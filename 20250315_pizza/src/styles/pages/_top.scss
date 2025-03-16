@@ -178,3 +178,50 @@
     }
   }
 }
+
+// Contactエリア
+.contact{
+  max-width: $content-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: 64px 0;
+
+  &_border{
+    width: 5%;
+    height: 6px;
+    background-color: $secondary-color;
+    margin: 0 auto 36px;
+  }
+
+  &-title{
+
+    &__text{
+      color: $secondary-color;
+      @include font-size("xxl");
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.4;
+    }
+  }
+
+  &__description{
+    padding: 18px 0;
+    width: 75%;
+    margin: 0 auto;
+
+    &-text{
+      color: $secondary-color;
+      @include font-size("sm");
+      font-weight: 700;
+      line-height: 2;
+      letter-spacing: 0.1px;
+    }
+  }
+}
+
+
+.menu{
+  max-width: $content-width;
+  width: 100%;
+  margin: 64px auto;
+}
