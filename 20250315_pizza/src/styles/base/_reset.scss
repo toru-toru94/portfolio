@@ -1,0 +1,57 @@
+// _reset.scss
+
+/* 1. ボックスサイズを統一（デフォルトは `content-box`） */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. リンクのデフォルトスタイルをリセット */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 3. リストのマーカー（●など）を削除 */
+ul, ol {
+  list-style: none;
+}
+
+/* 4. 画像・メディア要素のデフォルトスタイル */
+img, svg, video, canvas, audio, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 5. ボタンのデフォルトスタイルを削除 */
+button, input, select, textarea {
+  font: inherit; // フォントを継承
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* 6. テキストの選択時のスタイル（カスタマイズ可能） */
+::selection {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* 7. フォントのスムージング */
+html {
+  font-size: 16px; // ベースフォントサイズ（変更可）
+  -webkit-text-size-adjust: 100%; // iOSの自動ズーム防止
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 8. ボディのデフォルト設定 */
+body {
+  font-family: "Arial", sans-serif; // 好きなフォントに変更可
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}

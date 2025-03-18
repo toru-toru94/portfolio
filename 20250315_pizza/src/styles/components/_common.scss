@@ -44,7 +44,7 @@ body {
   }
 
   &__text{
-    @include font-size("xxl");
+    @include font-size("lg");
     font-weight: 700;
     position: relative;
 
@@ -58,6 +58,9 @@ body {
   }
 }
 
+.font-size{
+  @include font-size("xxl");
+}
 
 
 // ボタン
@@ -108,4 +111,22 @@ body {
       font-weight: 700;
     }
   }
+}
+
+.wrapper{
+  background-color: $secondary-color;
+  max-width: $content-width;
+  width: 100%;
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+.gmap_iframe{
+  // max-width: $content-width;
+  width: 85%;
+  height: auto;
+  aspect-ratio: 10 / 10;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow: hidden;
 }

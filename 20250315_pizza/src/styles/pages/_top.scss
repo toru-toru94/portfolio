@@ -49,11 +49,6 @@
 
 // メッセージエリア
 .message{
-  max-width: $content-width;
-  width: 100%;
-  margin: 0 auto;
-  padding: 60px 0;
-  background-color: $secondary-color;
 
   &__hero{
     display: flex;
@@ -139,7 +134,7 @@
 
 .pizzapride{
   height: 100%;
-  &__content{}
+  // &__content{}
   &__list{
     display: flex;
     flex-direction: column;
@@ -181,10 +176,6 @@
 
 // Contactエリア
 .contact{
-  max-width: $content-width;
-  width: 100%;
-  margin: 0 auto;
-  padding: 64px 0;
 
   &_border{
     width: 5%;
@@ -219,9 +210,256 @@
   }
 }
 
-
+// メニューエリア
 .menu{
-  max-width: $content-width;
-  width: 100%;
-  margin: 64px auto;
+
+  &__main{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  &__list{
+    &-item{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    &-image{
+      overflow: hidden;
+
+      & img{
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    &-text{
+      @include font-size("sm");
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    &-value{
+      @include font-size("sm");
+      font-weight: 500;
+      line-height: 1.2;
+    }
+  }
+}
+
+// Pizza in The house
+.house{
+
+  &__content{
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__list{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__item {
+    img{
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      // margin: 0 auto;
+    }
+  }
+
+  &__description{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title{
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+    padding-top: 16px;
+
+    &-number{
+      color: $primary-color;
+      @include font-size("md");
+      font-weight: 800;
+      font-family: $font-en;
+    }
+
+    &-text{
+      color: $text-color;
+      @include font-size("lg");
+      font-weight: 700;
+      line-height: 1.6;
+    }
+  }
+
+  &__body-text{
+    color: $text-color;
+    @include font-size("sm");
+    font-weight: 700;
+    line-height: 2;;
+  }
+}
+
+.news{
+
+  &__list{
+    // background-color: red;
+  }
+}
+
+.accordion {
+  margin: 1px 0;
+  background-color: #f9f9f9;
+  // border: 1px solid #000;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &-summary {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    list-style: none;
+
+    /* Safariのデフォルトのアイコン削除 */
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &-box {
+      width: 75%;
+    }
+
+    &-date {
+      @include font-size("md");
+      font-weight: 400;
+    }
+
+    &-text {
+      @include font-size("md");
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* ▼ ボタン */
+    .mark {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      &::before {
+        content: "▼"; /* 初期状態（閉じている時） */
+        font-size: 5px;
+      }
+    }
+  }
+
+  /* 開いた時のアイコンを変更 */
+  &[open] .mark::before {
+    content: "▲";
+    font-size: 5px;
+  }
+
+  /* アコーディオンコンテンツ */
+  &-content {
+    padding: 12px;
+    @include font-size("sm");
+    font-weight: 400;
+    line-height: 1.4;
+    display: none; /* デフォルトで非表示 */
+
+    /* 開いた時に表示 */
+    details[open] & {
+      display: block;
+    }
+  }
+}
+
+.faq{
+
+
+  &__list{
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &-item{
+      // display: flex;
+      // flex-direction: column;
+      // // gap: 24px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid $primary-color;
+   }
+
+   &-title{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+   }
+  }
+  &__title-text{
+    color: $primary-color;
+    @include font-size("lg");
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 0.05;
+  }
+
+  &__q-icon{
+    color: $primary-color;
+    // margin-right: 6px;
+    @include font-size("xl");
+    font-weight: 400;
+    // line-height: 1.3;
+    // letter-spacing: 0.05;
+   }
+}
+
+.shopdata{
+
+
+  &__table{
+    width: 85%;
+    margin: 0 auto;
+
+    &-item{
+      display: table;
+      // justify-content: space-between;
+      @include font-size("sm");
+      padding-bottom: 20px;
+    }
+
+    &-title{
+      border-left: 2px solid $primary-color;
+      padding: 0 5px 0 10px;
+      text-align: left;
+      height: 50px;
+      width: 210px;
+    }
+    &-text{
+      width: 75%;
+    }
+  }
 }
