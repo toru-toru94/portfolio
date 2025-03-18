@@ -156,3 +156,15 @@ body {
   border-radius: 10px;
   overflow: hidden;
 }
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* 下からフェードイン */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in-active {
+  opacity: 1;
+  transform: translateY(0);
+}
