@@ -2,13 +2,15 @@
 
 .footer{
   color: $secondary-color;
-  // background-color: $primary-color;
   max-width: $content-width;
   width: 100%;
   margin: 0 auto;
   text-align: center;
   padding: 100px 0;
-  // display: none;
+  @include min(sm){
+    max-width: 450px;
+  }
+
 
 // 住所エリア
   &__address{

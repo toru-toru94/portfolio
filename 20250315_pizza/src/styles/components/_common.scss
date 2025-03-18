@@ -2,11 +2,32 @@
 
 body {
   font-family: $font-ja;
-  background-color: rgb(252, 236, 236);
-  // background-color: #fff;
+  background-image: url("/assets/images/bg.jpeg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: round;
+  position: relative;
+  z-index: 0;
   width: 100%;
   height: 100%;
+
+  &::before{
+    content: '';
+    background: inherit;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    }
 }
+
 
 //日英 フォントスタイルの指定
 .font-en{
@@ -119,6 +140,11 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 64px 0;
+
+  @include min(sm){
+    max-width: 450px;
+  }
+
 }
 
 .gmap_iframe{
