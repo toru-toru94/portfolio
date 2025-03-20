@@ -1,7 +1,6 @@
 {
   "name": "20250315_pizza",
   "version": "1.0.0",
-  "description": "20250315_pizza/  ├── src/         # 開発用のソースコード  │   ├── assets/  # 画像やフォント  │   ├── styles/  # CSS, SCSS  │   ├── main.js  # エントリーポイント  │   └── index.html  # 開発用のHTML  │  ├── public/      # そのままコピーされるファイル  │   ├── favicon.ico  │   ├── robots.txt  │   └── images/  │  ├── dist/        # ビルド後の出力（本番環境用）  │   ├── assets/  │   ├── css/  │   ├── js/  │   ├── index.html  │  ├── .gitignore",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
