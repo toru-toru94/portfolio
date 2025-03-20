@@ -30,7 +30,7 @@
   &__decription {
     @include font-size("md");
     font-weight: 700;
-    color: $text-color;
+    color: $primary-color;
     letter-spacing: 1.5px;
   }
 
@@ -75,10 +75,14 @@
     align-items: center;
 
     &-text{
+      @include font-size("xl");
       color: $primary-color;
       font-weight: 400;
       line-height: 1.4;
-      letter-spacing: 0.15;
+
+      @include min(ssm) {
+        @include font-size("xxl");
+     }
     }
   }
 
@@ -112,10 +116,22 @@
     margin: 0 20px;
     width: fit-content;
     transform: translate(10px , -20px);
+
+    @include min(ssm) {
+      margin: 0;
+      transform: translate(0 , -20px);
+   }
+
     &-text{
       color: $secondary-color;
       @include font-size("xl");
+
+      @include min(ssm) {
+        @include font-size("xxl");
+      }
+
     }
+
   }
 
   &__description{

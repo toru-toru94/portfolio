@@ -19,10 +19,7 @@ body {
     -ms-filter: blur(5px);
     filter: blur(5px);
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
+    inset: 0;
     z-index: -1;
     }
 }
@@ -68,7 +65,7 @@ body {
     font-weight: 700;
     position: relative;
 
-    @include max(ssm) {
+    @include min(ssm) {
       @include font-size("xl");
    }
   }
@@ -79,9 +76,10 @@ body {
 }
 
 .font-size{
-  @include font-size("xxl");
+@include min(ssm){
+    @include font-size("xxl");
+  }
 }
-
 
 // ボタン
 .section-button{
@@ -159,7 +157,7 @@ body {
 
 .fade-in {
   opacity: 0;
-  transform: translateY(20px); /* 下からフェードイン */
+  transform: translateY(30px); /* 下からフェードイン */
   transition: opacity 1s ease-out, transform 1s ease-out;
 }
 

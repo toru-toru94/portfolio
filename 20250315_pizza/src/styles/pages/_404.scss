@@ -1,0 +1,66 @@
+@use 'abstracts/_variables.scss' as *;
+
+.outter{
+  position: relative;
+}
+.inner{
+  text-align: center;
+}
+
+.title{
+  @include font-size("xxxl");
+  color: $primary-color;
+  font-weight: 400;
+}
+
+.text{
+  color: $primary-color;
+  border: 1px solid $primary-color;
+  border-radius: 2px;
+  padding: 2px;
+  width: 35%;
+  margin: 0 auto;
+}
+
+.description{
+  padding: 30px 0;
+  color: $text-color;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.05px;
+}
+
+.button{
+  background-color: $primary-color;
+  color: $secondary-color;
+  @include font-size("sm");
+  font-weight: 100;
+  border-radius: 2px;
+  padding: 10px;
+  width: 35%;
+  margin: 0 auto;
+}
+
+.backtop{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $primary-color;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 10px 0 0 10px;
+
+  &::before{
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 11px;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid $secondary-color ;
+    border-right: 2px solid $secondary-color;
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  }
+}

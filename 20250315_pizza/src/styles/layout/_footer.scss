@@ -11,6 +11,9 @@
     max-width: 450px;
   }
 
+  body[data-page="contact"] &{
+    padding: 25px 0;
+  }
 
 // 住所エリア
   &__address{
