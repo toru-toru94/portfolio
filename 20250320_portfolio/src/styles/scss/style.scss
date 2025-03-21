@@ -1,27 +1,27 @@
-// 基本設定（リセット & Normalize.css）
-@use 'base/_reset.scss' as *;        // CSSリセットやNormalize.css
+// 基本設定
+@use 'base/_reset.scss' as *;        // Normalize.css
 @use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
 @use 'base/_functions.scss' as *;    // SCSS関数（pxをremに変換するなど）
 @use 'base/_mixins.scss' as *;       // ミックスイン（レスポンシブ対応やFlexbox用のヘルパーなど）
-@use 'base/_fontawesome.scss' as *;  // FontAwesomeの読み込み（必要なら）
+@use 'base/_fontawesome.scss' as *;  // FontAwesomeの読み込み
 
 // 基本スタイル
 @use 'base/_typography.scss' as *;   // フォントやテキスト関連のスタイル
-@use 'base/_globals.scss' as *;      // body, html, 汎用クラス
+@use 'base/_base.scss' as *;      // body, html, 汎用クラス
 
 // レイアウト（大枠のスタイル）
-// @use 'layout/_grid.scss' as *;       // グリッドシステム（必要なら）
+// @use 'layout/_grid.scss' as *;       // グリッドシステム
 @use 'layout/_header.scss' as *;     // ヘッダーのスタイル
 @use 'layout/_footer.scss' as *;     // フッターのスタイル
 
 // コンポーネント（ボタン・フォームなどのUI）
-@use 'components/_buttons.scss' as *;
-@use 'components/_forms.scss' as *;
-@use 'components/_cards.scss' as *;
+// @use 'components/_buttons.scss' as *;
+// @use 'components/_forms.scss' as *;
+// @use 'components/_cards.scss' as *;
 
-// ページごとのスタイル（もしあれば）
-@use 'pages/_top.scss' as *;
+// ページごとのスタイル
+// @use 'pages/_top.scss' as *;
 // @use 'pages/_about.scss' as *;
 
-// ユーティリティ（必要なら）
+// ユーティリティ
 // @use 'utilities/_helpers.scss' as *; // ヘルパークラス（margin調整など）

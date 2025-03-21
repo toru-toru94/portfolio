@@ -29,9 +29,7 @@ gulp.task("scripts", function () {
     .pipe(browserSync.stream());
 });
 
-// // assets (画像・フォント・その他の静的ファイル) を dist/assets にコピー
-
-
+// // assets (画像・その他の静的ファイル) を dist/assets にコピー
 gulp.task("assets", function () {
   return gulp.src("src/assets/**/*", { encoding: false })
     .pipe(gulp.dest("dist/assets/"))
