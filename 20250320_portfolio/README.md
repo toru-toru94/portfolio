@@ -13,7 +13,7 @@ gulp
 
 ### 注意事項
 browserSync で2件セキュリティの脆弱性が指摘されている。解消できてない状況。<br>
-使わなないで確認する場合、VSCodeのlive Serverを入れるのがお勧めです。<br>
+使わなないで確認する場合、VSCodeのlive Serverを入れる<br>
 
 ### 補足事項
 gulpを実行するとsrcのソースコードがdistに出力されます。<br>
