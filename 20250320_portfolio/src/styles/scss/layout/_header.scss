@@ -9,13 +9,13 @@
 }
 
 .header__menu--open{
-  padding: 24px 32px;
+  // padding: 24px 32px;
   background-color: $color-background-1st;
 }
 
 // ロゴ
 .header__logo {
-    padding: 10px;
+    // padding: 10px;
     font-size: 20px;
     @include min(tablet){
       font-size: 32px;
@@ -168,10 +168,6 @@
 
 // 768px〜1279px（タブレットのみ）
   @include min(tablet){
-  .header__inner{
-    // background-color: blue;
-  }
-
   .header__nav{
     display: flex;
     flex-direction: row;
@@ -206,20 +202,13 @@
   }
 
     .header__menu--open{
-      display: none;
+      display: block;
     }
   }
 
 
 // 1280px以上
 @include min(pc){
-  .header__inner{
-    display: flex;
-    justify-content: space-between;
-    // background-color: red;
-  }
-
-
   .header__nav .other-box{
     display: flex;
     flex-direction: row;
