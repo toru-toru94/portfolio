@@ -1,0 +1,9 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_functions.scss' as *;    // SCSS関数（pxをremに変換するなど）
+@use 'base/_mixins.scss' as *;
+
+.wrapper{
+  // max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}

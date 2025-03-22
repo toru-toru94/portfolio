@@ -1,0 +1,241 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_functions.scss' as *;    // SCSS関数（pxをremに変換するなど）
+@use 'base/_mixins.scss' as *;
+
+.header__inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__menu--open{
+  padding: 24px 32px;
+  background-color: $color-background-1st;
+}
+
+// ロゴ
+.header__logo {
+    padding: 10px;
+    font-size: 20px;
+    @include min(tablet){
+      font-size: 32px;
+    }
+    a{
+      display: inline-block;
+      font-family: $font-logo;
+    }
+  }
+
+// メニューボタン-close
+.header__menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  span {
+    height: 2px;
+    width: 24px;
+    background-color: $color-primary;
+    border-radius: 1px;
+    transition: all .3s ease;
+  }
+}
+
+
+// メニューボタン-open
+.header__menu-btn.is-open{
+  span:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  span:nth-child(2){
+    opacity: 0;
+  }
+  span:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+
+
+.header__menu-box{
+  margin-bottom: 40px;
+  &::after{
+    content: '';
+    display: block;
+    height: 3px;
+    background-image: repeating-linear-gradient(
+    to right,
+    $color-border,
+    $color-border 10px,
+    transparent 10px,
+    transparent 15px
+  );
+  }
+}
+
+.header__menu-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+
+// .header__menu-item{
+// }
+
+
+
+// 検索窓
+.search-box form{
+  display: flex;
+  flex-direction: row;
+  background-color: $color-background-2nd;
+  padding: 10px;
+  border-radius: 10px;
+
+  button{
+    margin: 0 10px;
+  }
+
+  input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: $color-background-2nd;
+  }
+}
+
+.search-box__tags{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-box__tag{
+  border: 1px solid $color-primary;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.search-box__tag{
+  &-title{
+    font-size: $font-size-lg;
+  }
+}
+
+// その他
+.header__menu--open .other-box{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.header__menu--open .sns-box{
+  &__list{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  &__item{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+// JS実装したら削除(is-open
+// .header__menu{
+//   // display: none;
+// }
+
+
+@include max(sp){
+  .header__nav form,
+  .header__nav .other-box,
+  .header__nav .sns-box {
+    display: none;
+  }
+}
+
+
+// 768px〜1279px（タブレットのみ）
+  @include min(tablet){
+  .header__inner{
+    // background-color: blue;
+  }
+
+  .header__nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+
+    form{
+      display: flex;
+      flex-direction: row;
+      background-color: $color-background-2nd;
+      padding: 10px;
+      border-radius: 10px;
+      width: 400px;
+
+      button{
+        margin: 0 10px;
+      }
+
+      input{
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background-color: $color-background-2nd;
+      }
+    }
+  }
+
+  .header__nav .other-box,
+  .header__nav .sns-box {
+    display: none;
+  }
+
+    .header__menu--open{
+      display: none;
+    }
+  }
+
+
+// 1280px以上
+@include min(pc){
+  .header__inner{
+    display: flex;
+    justify-content: space-between;
+    // background-color: red;
+  }
+
+
+  .header__nav .other-box{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .header__nav .sns-box {
+    display: block;
+    .sns-box__list{
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+
+  .header__menu--open{
+      display: block;
+    }
+}

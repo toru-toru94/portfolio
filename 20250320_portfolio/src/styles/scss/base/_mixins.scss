@@ -1,9 +1,5 @@
-// ブレークポイント
-$breakpoints: (
-  sp: 375px,
-  tablet: 768px,
-  pc: 1280px
-);
+@use 'base/_variables.scss' as *;
+@use 'sass:map';
 
 // 最小幅（min-width）
 @mixin min($breakpoint) {

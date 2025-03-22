@@ -3,14 +3,13 @@
 @use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
 @use 'base/_functions.scss' as *;    // SCSS関数（pxをremに変換するなど）
 @use 'base/_mixins.scss' as *;       // ミックスイン（レスポンシブ対応やFlexbox用のヘルパーなど）
-@use 'base/_fontawesome.scss' as *;  // FontAwesomeの読み込み
 
 // 基本スタイル
 @use 'base/_typography.scss' as *;   // フォントやテキスト関連のスタイル
 @use 'base/_base.scss' as *;      // body, html, 汎用クラス
 
 // レイアウト（大枠のスタイル）
-// @use 'layout/_grid.scss' as *;       // グリッドシステム
+@use 'layout/_layout.scss' as *;       // 構造用
 @use 'layout/_header.scss' as *;     // ヘッダーのスタイル
 @use 'layout/_footer.scss' as *;     // フッターのスタイル
 

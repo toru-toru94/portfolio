@@ -1,3 +1,29 @@
-body{
-  background-color: beige;
+@use 'base/_variables.scss' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: $font-base;
+  font-size: $font-size-md;
+  color: $color-text;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+}
+
+li{
+  list-style: none;
 }

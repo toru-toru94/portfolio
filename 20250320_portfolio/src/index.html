@@ -4,53 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ポートフォリオ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rampart+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-～" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/main.js" defer></script>
 </head>
 <body>
   <!-- ヘッダー -->
   <header class="header">
-    <!-- メニューclose -->
-    <h1 class="header__logo"><a href="/">ポートフォリオ</a></h1>
-    <button class="header__menu-btn">
-      <span></span><span></span><span></span>
-    </button>
-
-    <!-- メニューopen -->
-     <nav class="header__menu">
-      <ul  class="header__menu-list">
-        <li class="header__menu-item"><a href="#" class="header__menu-link">トップ</a></li>
-        <li class="header__menu-item"><a href="#" class="header__menu-link">実績一覧</a></li>
-        <li class="header__menu-item"><a href="#profile" class="header__menu-link">プロフィール></a></li>
-        <li class="header__menu-item"><a href="#news" class="header__menu-link">お知らせ</a></li>
-        <li class="header__menu-item"><a href="#faq" class="header__menu-link">よくある質問</a></li>
-        <!-- <li class="header__menu-item"><a href="#" class="header__menu-link">プライバシーポリシー</a></li> -->
-      </ul>
-     </nav>
-
-     <!-- 検索窓 -->
-     <div class="search-box">
-        <form action="/search" method="GET">
-          <button><i class="fa-solid fa-magnifying-glass"></i></button>
-          <input type="text" name="q" placeholder="キーワードで検索" >
-        </form>
-        <h2 class="search-box__tag-title">気になるタグから実績を検索</h2>
-        <div class="search-box__tags">
-          <span class="search-box__tag" data-tag="branding">ブランディング</span>
-          <span class="search-box__tag" data-tag="book">書籍</span>
-          <span class="search-box__tag" data-tag="website">ウェブサイト</span>
-          <span class="search-box__tag" data-tag="logo">ロゴ</span>
-          <span class="search-box__tag" data-tag="package">パッケージ</span>
-          <span class="search-box__tag" data-tag="ad">広告</span>
-          <span class="search-box__tag" data-tag="move">動画制作</span>
-        </div>
+      <!-- メニュー:sp:close -->
+      <div class="wrapper header__inner">
+          <h1 class="header__logo"><a href="/">ポートフォリオ</a></h1>
+          <!-- SP:非表示 -->
+          <div class="header__nav">
+            <form action="/search" method="GET">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              <input type="text" name="q" placeholder="キーワードで検索" >
+            </form>
+            <!-- その他 -->
+            <div class="other-box">
+              <a href="#">ショップ</a>
+              <a href="#">お問い合わせ</a>
+            </div>
+            <!-- SNS -->
+            <div class="sns-box">
+              <ul class="sns-box__list">
+                <li class="sns-box__item"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li class="sns-box__item"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li class="sns-box__item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="sns-box__item"><a href="#"><i class="fa-brands fa-threads"></i></a></li>
+              </ul>
+            </div>
+            <button class="header__menu-btn">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
       </div>
+      <!-- メニュー:sp:open -->
+      <div class="wrapper header__menu header__menu--open">
+        <nav class="header__menu-box">
+          <ul  class="header__menu-list">
+            <li class="header__menu-item"><a href="#" class="header__menu-link">トップ</a></li>
+            <li class="header__menu-item"><a href="#" class="header__menu-link">実績一覧</a></li>
+            <li class="header__menu-item"><a href="#profile" class="header__menu-link">プロフィール</a></li>
+            <li class="header__menu-item"><a href="#news" class="header__menu-link">お知らせ</a></li>
+            <li class="header__menu-item"><a href="#faq" class="header__menu-link">よくある質問</a></li>
+          </ul>
+        </nav>
+
+        <!-- 検索窓 -->
+        <div class="search-box">
+            <form action="/search" method="GET">
+              <button><i class="fa-solid fa-magnifying-glass"></i></button>
+              <input type="text" name="q" placeholder="キーワードで検索" >
+            </form>
+            <h2 class="search-box__tag-title">気になるタグから実績を検索</h2>
+            <div class="search-box__tags">
+              <button class="search-box__tag" data-tag="branding">ブランディング</button>
+              <button class="search-box__tag" data-tag="book">書籍</button>
+              <button class="search-box__tag" data-tag="website">ウェブサイト</button>
+              <button class="search-box__tag" data-tag="logo">ロゴ</button>
+              <button class="search-box__tag" data-tag="package">パッケージ</button>
+              <button class="search-box__tag" data-tag="ad">広告</button>
+              <button class="search-box__tag" data-tag="move">動画制作</button>
+            </div>
+          </div>
+          <!-- その他 -->
+          <div class="other-box">
+            <a href="#">ショップ</a>
+            <a href="#">お問い合わせ</a>
+          </div>
+          <!-- SNS -->
+          <div class="sns-box">
+            <ul class="sns-box__list">
+              <li class="sns-box__item"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+              <li class="sns-box__item"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+              <li class="sns-box__item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+              <li class="sns-box__item"><a href="#"><i class="fa-brands fa-threads"></i></a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
   </header>
   <!-- メイン -->
-  <main>
-
+  <main class="main">
+    <!-- hero -->
+    <section class="hero">
+      <p>hero</p>
+    </section>
   </main>
-   <!-- フッター -->
-   <footer></footer>
+  <!-- フッター -->
+  <footer></footer>
 </body>
 </html>
