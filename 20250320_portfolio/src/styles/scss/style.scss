@@ -14,6 +14,7 @@
 @use 'layout/_footer.scss' as *;     // フッターのスタイル
 
 // コンポーネント（ボタン・フォームなどのUI）
+@use 'components/_hero.scss' as *;
 // @use 'components/_buttons.scss' as *;
 // @use 'components/_forms.scss' as *;
 // @use 'components/_cards.scss' as *;

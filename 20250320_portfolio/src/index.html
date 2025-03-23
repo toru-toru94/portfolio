@@ -26,8 +26,8 @@
             </form>
             <!-- その他 -->
             <div class="other-box">
-              <a href="#">ショップ</a>
-              <a href="#">お問い合わせ</a>
+              <a href="#"><i class="fa-solid fa-cart-shopping"></i>ショップ</a>
+              <a href="#"><i class="fa-solid fa-envelope"></i>お問い合わせ</a>
             </div>
             <!-- SNS -->
             <div class="sns-box">
@@ -57,10 +57,13 @@
 
         <!-- 検索窓 -->
         <div class="search-box">
+          <div class="search-box__item">
             <form action="/search" method="GET">
               <button><i class="fa-solid fa-magnifying-glass"></i></button>
               <input type="text" name="q" placeholder="キーワードで検索" >
             </form>
+          </div>
+          <div class="search-box__item">
             <h2 class="search-box__tag-title">気になるタグから実績を検索</h2>
             <div class="search-box__tags">
               <button class="search-box__tag" data-tag="branding">ブランディング</button>
@@ -72,19 +75,21 @@
               <button class="search-box__tag" data-tag="move">動画制作</button>
             </div>
           </div>
-          <!-- その他 -->
-          <div class="other-box">
-            <a href="#">ショップ</a>
-            <a href="#">お問い合わせ</a>
-          </div>
-          <!-- SNS -->
-          <div class="sns-box">
-            <ul class="sns-box__list">
-              <li class="sns-box__item"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-              <li class="sns-box__item"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-              <li class="sns-box__item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-              <li class="sns-box__item"><a href="#"><i class="fa-brands fa-threads"></i></a></li>
-            </ul>
+          <div class="search-box__item">
+            <!-- その他 -->
+            <div class="other-box">
+              <a href="#"><i class="fa-solid fa-cart-shopping"></i>ショップ</a>
+              <a href="#"><i class="fa-solid fa-envelope"></i>お問い合わせ</a>
+            </div>
+            <!-- SNS -->
+            <div class="sns-box">
+              <ul class="sns-box__list">
+                <li class="sns-box__item"><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li class="sns-box__item"><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li class="sns-box__item"><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="sns-box__item"><a href="#"><i class="fa-brands fa-threads"></i></a></li>
+              </ul>
+            </div>
           </div>
         </div>
     </div>
@@ -93,7 +98,31 @@
   <main class="main">
     <!-- hero -->
     <section class="hero">
-      <p>hero</p>
+      <div class="hero__visual">
+
+        <img src="./assets/images/dummy_2400×1200.webp" alt="自然の景色" class="hero__image"/>
+
+        <div class="hero__overlay">
+          <p class="hero__overlay-text-en">Nature is Fun.</p>
+          <p class="hero__overlay-text-jp">自然を楽しむ。</p>
+        </div>
+
+        <!-- <div class="hero__badge">
+          <p class="hero__badge-label">Nature Travel</p>
+          <p class="hero__badge-tag"><span>イチオシ</span>記事</p>
+          <a href="#" class="hero__badge-link">記事を読む</a>
+        </div>
+      </div> -->
+
+      <div class="hero__content">
+        <!-- <span class="hero__content-decoration-top"></span> -->
+        <p class="hero__category">旅行メディア</p>
+        <h2 class="hero__title">人生を豊かにする<br>旅のしおり</h2>
+        <p class="hero__text">
+          自然を楽しむ旅行が好きな人のために、旅のプロがお届けする旅行に役立つ情報メディア。世界遺産、絶景、アクティビティ、歴史・文化などの情報が満載です。
+        </p>
+        <!-- <span class="hero__content-decoration-bottom"></span> -->
+      </div>
     </section>
   </main>
   <!-- フッター -->
