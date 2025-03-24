@@ -8,6 +8,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rampart+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-～" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- /Swiper -->
 
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/main.js" defer></script>
@@ -44,7 +48,7 @@
           </div>
       </div>
       <!-- メニュー:sp:open -->
-      <div class="wrapper header__menu header__menu--open">
+      <div class="wrapper header__menu header__menu--close">
         <nav class="header__menu-box">
           <ul  class="header__menu-list">
             <li class="header__menu-item"><a href="#" class="header__menu-link">トップ</a></li>
@@ -99,30 +103,31 @@
     <!-- hero -->
     <section class="hero">
       <div class="hero__visual">
-
-        <img src="./assets/images/dummy_2400×1200.webp" alt="自然の景色" class="hero__image"/>
+        <div class="swiper hero__swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide ">
+              <img src="./assets/images/dummy_2400×1200.webp" alt="自然の景色" class="hero__image"/>
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/img-2.jpg" alt="自然の景色" class="hero__image"/>
+            </div>
+          </div>
+      </div>
 
         <div class="hero__overlay">
-          <p class="hero__overlay-text-en">Nature is Fun.</p>
-          <p class="hero__overlay-text-jp">自然を楽しむ。</p>
+          <p class="hero__overlay-text-en">English - title</p>
+          <p class="hero__overlay-text-jp">日本語 - タイトル</p>
         </div>
-
-        <!-- <div class="hero__badge">
-          <p class="hero__badge-label">Nature Travel</p>
-          <p class="hero__badge-tag"><span>イチオシ</span>記事</p>
-          <a href="#" class="hero__badge-link">記事を読む</a>
-        </div>
-      </div> -->
 
       <div class="hero__content">
-        <!-- <span class="hero__content-decoration-top"></span> -->
-        <p class="hero__category">旅行メディア</p>
-        <h2 class="hero__title">人生を豊かにする<br>旅のしおり</h2>
+        <p class="hero__category">カテゴリー</p>
+        <h2 class="hero__title">タイトルが入ります！</h2>
         <p class="hero__text">
-          自然を楽しむ旅行が好きな人のために、旅のプロがお届けする旅行に役立つ情報メディア。世界遺産、絶景、アクティビティ、歴史・文化などの情報が満載です。
+          テキストが入ります！テキストが入ります！テキストが入ります！テキストが入ります！テキストが入ります！テキストが入ります！テキストが入ります！テキストが入ります！テキストが入ります！テキストが入ります！
         </p>
-        <!-- <span class="hero__content-decoration-bottom"></span> -->
       </div>
+      <button type="button" id="pauseBtn"></button>
+      <!-- <button type="button" id="startBtn"></button> -->
     </section>
   </main>
   <!-- フッター -->

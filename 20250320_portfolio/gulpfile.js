@@ -23,9 +23,9 @@ gulp.task("styles", function () {
 
 // JavaScript を圧縮
 gulp.task("scripts", function () {
-  return gulp.src("src/scripts/*.js")
-    .pipe(uglify())
-    .pipe(gulp.dest("dist/js"))
+  return gulp.src("src/scripts/main.js")
+    // .pipe(uglify())
+    .pipe(gulp.dest("dist/js/"))
     .pipe(browserSync.stream());
 });
 

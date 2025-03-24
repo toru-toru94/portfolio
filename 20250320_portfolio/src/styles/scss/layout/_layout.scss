@@ -2,14 +2,18 @@
 @use 'base/_functions.scss' as *;    // SCSS関数（pxをremに変換するなど）
 @use 'base/_mixins.scss' as *;
 
-// 共通
+/// ==============
+/// 共通
+/// ==============
 .wrapper{
   // max-width: 1280px;
   margin: 0 auto;
   padding: 32px;
 }
 
-//////////////// ヘッダー関連 ////////////////
+/// ==============
+/// ヘッダー関連
+/// ==============
 .header__inner {
   display: flex;
   justify-content: space-between;
@@ -162,4 +166,8 @@
     display: none;
   }
 }
-//////////////// ヘッダー関連 ////////////////
+
+
+/// ==============
+/// 〇〇関連
+/// ==============
