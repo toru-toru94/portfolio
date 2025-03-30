@@ -2,9 +2,10 @@
   "name": "20250315_portfolio",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://toruhagiwara.github.io/20250320_portfolio",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d dist"
+    "build": "gulp build",
+    "deploy": "gh-pages -d dist/20250320_portfolio"
   },
   "keywords": [],
   "author": "",
