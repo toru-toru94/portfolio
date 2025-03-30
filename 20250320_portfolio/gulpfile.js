@@ -8,7 +8,7 @@ const browserSync = require("browser-sync").create();
 // HTMLを圧縮せずにそのままコピー
 gulp.task("html", function () {
   return gulp.src("src/*.html")
-    .pipe(gulp.dest("dist"))
+    .pipe(gulp.dest("dist/20250320_portfolio"))
     .pipe(browserSync.stream());
 });
 
@@ -17,7 +17,7 @@ gulp.task("styles", function () {
   return gulp.src("src/styles/scss/style.scss")
     .pipe(sass().on("error", sass.logError))
     .pipe(cleanCSS())
-    .pipe(gulp.dest("dist/css/"))
+    .pipe(gulp.dest("dist/20250320_portfolio/css/"))
     .pipe(browserSync.stream());
 });
 
@@ -25,14 +25,14 @@ gulp.task("styles", function () {
 gulp.task("scripts", function () {
   return gulp.src("src/scripts/main.js")
     // .pipe(uglify())
-    .pipe(gulp.dest("dist/js/"))
+    .pipe(gulp.dest("dist/20250320_portfolio/js/"))
     .pipe(browserSync.stream());
 });
 
 // // assets (画像・その他の静的ファイル) を dist/assets にコピー
 gulp.task("assets", function () {
   return gulp.src("src/assets/**/*", { encoding: false })
-    .pipe(gulp.dest("dist/assets/"))
+    .pipe(gulp.dest("dist/20250320_portfolio/assets/"))
     .pipe(browserSync.stream());
 });
 
@@ -40,7 +40,7 @@ gulp.task("assets", function () {
 // ローカルサーバーを立ち上げる
 gulp.task("serve", function () {
   browserSync.init({
-    server: "./dist",
+    server: "./dist/20250320_portfolio",
   });
 
   gulp.watch("src/*.html", gulp.series("html")).on("change", browserSync.reload);
@@ -50,4 +50,4 @@ gulp.task("serve", function () {
 });
 
 // デフォルトタスク
-gulp.task("default", gulp.series("html", "styles", "scripts", "assets", "serve"));
+gulp.task("build", gulp.series("html", "styles", "scripts", "assets", "serve"));
