@@ -15,9 +15,14 @@
 
 // コンポーネント（ボタン・フォームなどのUI）
 @use 'components/_hero.scss' as *;
+@use 'components/_contents.scss' as *;
 // @use 'components/_buttons.scss' as *;
 // @use 'components/_forms.scss' as *;
-// @use 'components/_cards.scss' as *;
+@use 'components/_cards.scss' as *;
+@use 'components/_news.scss' as *;
+@use 'components/_faq.scss' as *;
+@use 'components/_contact.scss' as *;
+
 
 // ページごとのスタイル
 // @use 'pages/_top.scss' as *;

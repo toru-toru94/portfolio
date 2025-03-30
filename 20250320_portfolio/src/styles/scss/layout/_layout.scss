@@ -11,6 +11,17 @@
   padding: 32px;
 }
 
+body.no-scroll {
+  overflow: hidden;
+  height: 100%;
+  touch-action: none;
+}
+
+section[id] {
+  scroll-margin-top: 200px;
+}
+
+
 /// ==============
 /// ヘッダー関連
 /// ==============
@@ -53,6 +64,10 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+.header__menu{
+  padding: 32px;
+  margin: 0 auto;
+}
 
 // その他(ショップ、お問い合わせ、SNS)
 .header__menu--open .other-box{
@@ -78,6 +93,9 @@
   }
 }
 
+.header__menu--open .search-box__tag-title{
+  margin: 32px 0;
+}
 // 768px〜1279px（タブレットからノートPC）
 @include min(tablet){
   .header__nav{
@@ -171,3 +189,6 @@
 /// ==============
 /// 〇〇関連
 /// ==============
+main{
+  background-color: antiquewhite;
+}

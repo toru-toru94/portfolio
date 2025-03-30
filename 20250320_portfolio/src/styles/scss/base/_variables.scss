@@ -17,6 +17,10 @@ $font-size-md-plus: 18px;
 $font-size-lg: 20px;
 $font-size-xl: 24px;
 $font-size-xxl: 28px;
+$font-size-title-lv1:56px;
+$font-size-title-lv2:48px;
+$font-size-title-lv3:32px;
+$font-size-title-lv4:28px;
 
 // スペーシング
 $spacing-xs: 4px;
@@ -32,8 +36,3 @@ $breakpoints: (
   tablet-pc: 1279px,
   pc:1280px
 );
-
-// $breakpoint-sm: 576px;
-// $breakpoint-md: 768px;
-// $breakpoint-lg: 992px;
-// $breakpoint-xl: 1200px;

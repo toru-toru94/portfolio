@@ -1,0 +1,70 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_functions.scss' as *;    // SCSS関数（pxをremに変換するなど）
+@use 'base/_mixins.scss' as *;
+
+$color-border:#333;
+$color-shadow: #eee;
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+
+}
+
+.card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 25px;
+  border: 1px solid $color-border;
+  box-shadow: 1px 1px 0px $color-shadow;
+  max-width: 335px;
+  opacity: 1;
+  overflow: hidden;
+  background-color: $color-background-1st;
+  &:hover{
+    box-shadow: none;
+    opacity: 0.7;
+  }
+  &__thumb{
+    width: 100%;
+    height: auto;
+  }
+  &__desc{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 32px;
+  }
+  &__date{
+    font-weight: 500;
+  }
+  &__heading{
+    font-weight: 500;
+  }
+  &__tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  &__tag{
+    border-radius: 5px;
+    border: 1px solid $color-border;
+    padding: 5px;
+    font-weight: 500;
+  }
+  &__link{
+    &::after{
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: auto;
+      background-color: transparent;
+
+    }
+  }
+}

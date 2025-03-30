@@ -1,0 +1,68 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_functions.scss' as *;    // SCSS関数（pxをremに変換するなど）
+@use 'base/_mixins.scss' as *;
+
+
+.faq {
+  // background-color: #f9f9f9;
+  padding: 40px 20px;
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__item {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    background: $color-background-1st;
+
+    summary {
+      padding: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      position: relative;
+      list-style: none;
+
+      &::marker {
+        display: none; // デフォルトの三角マークを消す
+      }
+
+      &::after {
+        content: "＋";
+        position: absolute;
+        right: 16px;
+        font-size: 18px;
+        transition: transform 0.3s;
+      }
+    }
+
+    &[open] summary::after {
+      content: "－";
+    }
+
+    .faq__answer {
+      padding: 0 16px 16px;
+      animation: fadeIn 0.3s ease;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

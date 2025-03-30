@@ -1,0 +1,59 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_functions.scss' as *;    // SCSS関数（pxをremに変換するなど）
+@use 'base/_mixins.scss' as *;
+
+
+.contact {
+  // background-color: #f9f9f9;
+  padding: 60px 20px;
+
+  &__title {
+    font-size: 24px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  &__form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__form-group {
+    margin-bottom: 24px;
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+  }
+
+  .required {
+    color: red;
+    font-size: 14px;
+    margin-left: 4px;
+  }
+
+  &__submit {
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #555;
+    }
+  }
+}

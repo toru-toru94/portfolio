@@ -1,14 +1,22 @@
 @use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
 @use 'base/_functions.scss' as *;    // SCSS関数（pxをremに変換するなど）
 @use 'base/_mixins.scss' as *;
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: $color-background-1st;
+}
 
 .header__menu--open{
   position: fixed;
+  top: 100px;
+  left: 0;
   width: 100%;
-  height: 100%;
-  background-color: $color-background-1st;
-  z-index: 1000;
+  height: calc(var(--vh, 1vh) * 100 - 100px);
   overflow-y: auto;
+  z-index: 9999;
+  background-color: $color-background-1st;
 }
 
 .header__menu--close{
