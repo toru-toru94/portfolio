@@ -1,0 +1,191 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_functions.scss' as *;    // SCSS関数（pxをremに変換するなど）
+@use 'base/_mixins.scss' as *;
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: $color-background-1st;
+}
+
+.header__menu--open{
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: calc(var(--vh, 1vh) * 100 - 100px);
+  overflow-y: auto;
+  z-index: 9999;
+  background-color: $color-background-1st;
+}
+
+.header__menu--close{
+  display: none;
+}
+
+// ロゴ
+.header__logo {
+    font-size: 20px;
+    @include min(tablet){
+      font-size: 32px;
+    }
+    a{
+      display: inline-block;
+      font-family: $font-logo;
+    }
+  }
+
+// メニューボタン-close
+.header__menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+
+  span {
+    height: 2px;
+    width: 24px;
+    background-color: $color-primary;
+    border-radius: 1px;
+    transition: all .3s ease;
+  }
+}
+
+
+
+
+// メニューボタン-open
+.header__menu-btn.is-open{
+  span:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  span:nth-child(2){
+    opacity: 0;
+  }
+  span:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+.header__menu-box{
+  margin-bottom: 40px;
+  &::after{
+    content: '';
+    display: block;
+    height: 3px;
+    background-image: repeating-linear-gradient(
+    to right,
+    $color-border,
+    $color-border 10px,
+    transparent 10px,
+    transparent 15px
+  );
+  }
+}
+
+.header__menu-list{
+  font-weight: 700;
+}
+
+
+// 検索窓
+.search-box form {
+  background-color: $color-background-2nd;
+  padding: 10px;
+  border-radius: 10px;
+
+  button {
+    margin: 0 10px;
+  }
+
+  input {
+    padding: 10px;
+    border: none;
+    background-color: $color-background-2nd;
+  }
+}
+
+// 気になるタグ
+.search-box__tag{
+  border: 2px solid $color-primary;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 500;
+
+  &-title{
+    font-size: $font-size-lg;
+  }
+}
+
+
+// JS実装したら削除(is-open
+// .header__menu{
+//   // display: none;
+// }
+
+
+// 768px〜1279px（タブレットからノートPC）
+  @include min(tablet){
+  .header__nav{
+    form{
+      background-color: $color-background-2nd;
+      input{
+        background-color: $color-background-2nd;
+      }
+    }
+  }
+
+  .header__menu-box{
+    position: relative;
+    padding-right: 60px;
+    padding-left: 60px;
+    height: fit-content;
+    &::after{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 3px;
+      height: 100%;
+      background-image: repeating-linear-gradient(to bottom, #747474, #747474 10px, transparent 10px, transparent 15px);
+    }
+  }
+
+  .header__menu-list{
+    font-size: $font-size-md;
+    font-weight: 700;
+  }
+
+  .search-box__tag-title{
+    font-size: $font-size-lg;
+  }
+}
+
+
+// 1280px以上
+@include min(pc){
+  .header__menu-box{
+    position: relative;
+    padding-right: 60px;
+    padding-left: 60px;
+    height: fit-content;
+    &::after{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 3px;
+      height: 100%;
+      background-image: repeating-linear-gradient(to bottom, #747474, #747474 10px, transparent 10px, transparent 15px);
+    }
+  }
+
+  .header__menu-list{
+    font-size: $font-size-md;
+  }
+
+  .search-box__tag-title{
+    font-size: $font-size-lg;
+  }
+}

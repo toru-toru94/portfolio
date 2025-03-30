@@ -1,0 +1,42 @@
+@use 'base/_variables.scss' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: $font-base;
+  font-size: $font-size-md;
+  color: $color-text;
+  background-color: $color-background-1st;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+ul{
+  padding: 0;
+  margin: 0;
+}
+
+li{
+  list-style: none;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+p{
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,173 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_functions.scss' as *;    // SCSS関数（pxをremに変換するなど）
+@use 'base/_mixins.scss' as *;
+
+.hero{
+  width: 100%;
+  // padding: 0 16px 32px 16px;
+  box-sizing: border-box;
+  position: relative;
+  &__visual{
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+
+    .hero__swiper{
+      width: 100%;
+      height: auto;
+    }
+
+    .hero__image{
+      width: 100%;
+      height: 70vh;
+      display: block;
+      object-fit: cover;
+    }
+  }
+
+  &__overlay{
+    position: absolute;
+    z-index: 3;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    color: $color-secondary;
+    border-radius: 20px;
+
+    &-text-en{
+      font-size: $font-size-xxl;
+      font-weight: 700;
+    }
+
+    &-text-jp{
+      font-size: $font-size-lg;
+      font-weight: 500;
+      margin-top: 8px;
+    }
+  }
+
+  &__content{
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    width: 75%;
+    background-color: $color-background-1st;
+    padding: 16px;
+    border-radius: 0px 16px 0 0;
+
+    @include min(tablet){
+      width: 50%;
+    }
+
+
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 0;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: $color-background-1st;
+      -webkit-mask-image: radial-gradient(circle 20px at top right,transparent 20px,#000 16px);
+      mask-image: radial-gradient(circle 20px at top right,transparent 20px,#000 16px);
+      overflow: hidden;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      right: -20px;
+      bottom: 0;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-color: $color-background-1st;
+      -webkit-mask-image: radial-gradient(circle 20px at top right,transparent 20px,#000 16px);
+      mask-image: radial-gradient(circle 20px at top right,transparent 20px,#000 16px);
+    }
+  }
+
+  &__category{
+    font-size: $font-size-sm;
+    color: $color-accent;
+    font-weight: 700;
+    margin-bottom: 8px;
+
+    @include min(tablet){
+      font-size: $font-size-xl;
+    }
+
+  }
+
+  &__title{
+    font-size: $font-size-md-plus;
+    font-weight: 700;
+    margin-bottom: 12px;
+
+    @include min(tablet){
+      font-size: $font-size-xxl;
+    }
+  }
+
+  &__text{
+    font-size: $font-size-sm;
+    line-height: 1.6;
+    color: $color-primary;
+
+    @include min(tablet){
+      font-size: $font-size-md;
+    }
+  }
+}
+
+#pauseBtn{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $color-secondary;
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::before{
+    content: '';
+    width: 4px;
+    height: 10px;
+    background-color: #000;
+    display: block;
+    margin-right: 4px;
+  }
+  &::after{
+    content: '';
+    width: 4px;
+    height: 10px;
+    background-color: #000;
+    display: block;
+    margin-left: 4px;
+  }
+}
+
+#startBtn{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $color-secondary;
+  position: absolute;
+  bottom: 20px;
+  right: 25px;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::before{
+    content: '';
+    height: 20px;
+    aspect-ratio: cos(30deg);
+    clip-path: polygon(0 0,100% 50%,0 100%);
+    background: linear-gradient(45deg,#FA6900,#C02942);
+  }
+}

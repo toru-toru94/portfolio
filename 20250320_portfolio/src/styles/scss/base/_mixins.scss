@@ -1,0 +1,16 @@
+@use 'base/_variables.scss' as *;
+@use 'sass:map';
+
+// 最小幅（min-width）
+@mixin min($breakpoint) {
+  @media screen and (min-width: #{map.get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+// 最大幅（max-width）
+@mixin max($breakpoint) {
+  @media screen and (max-width: #{map.get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
