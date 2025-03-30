@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       nav.classList.replace('header__menu--close', 'header__menu--open');
       document.body.classList.add('no-scroll');
-
-      // スマホ対応：vh再設定
       setVh();
     }
   });
@@ -24,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", () => {
       nav.classList.replace("header__menu--open", "header__menu--close");
       document.body.classList.remove("no-scroll");
-      hamBtn.classList.remove("is-open"); // メニューアイコンも元に戻す（任意）
+      hamBtn.classList.remove("is-open");
     });
   });
   //  実績カードフィルタリング
@@ -35,6 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", () => {
       const tag = button.dataset.tag;
 
+      // 🔸カレント表示の処理（すべてのタグから削除 → 自分に追加）
+      tagButtons.forEach(btn => btn.classList.remove("is-active"));
+      button.classList.add("is-active");
+
+      // フィルター処理（既にある内容）
       if (tag === "all") {
         cards.forEach(card => card.style.display = "block");
         return;

@@ -21,17 +21,17 @@
   }
 
   &__item + &__item {
-    margin-top: 16px;
+    margin-top: 40px;
   }
 
   &__item{
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     border-bottom: 1px solid #eee;
     font-size: $font-size-md;
 
     &:nth-child(1){
       border-top: 1px solid #eee;
-      padding-top: 20px;
+      padding-top: 40px;
     }
   }
 
@@ -55,7 +55,7 @@
   &__date {
     min-width: 100px;
     font-size: $font-size-md;
-    color: #888;
+    color: #555;
   }
 
   &__label {
