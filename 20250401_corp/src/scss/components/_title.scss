@@ -1,0 +1,19 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_mixins.scss' as *;
+
+.section-title{
+  font-size: $font-size-title-lv4;
+  font-weight: 600;
+  color: $color-text;
+  text-align: center;
+  padding-top: 60px;
+  &::after{
+    content: '';
+    width: 40px;
+    height: 4px;
+    background: $color-border;
+    display: block;
+    margin: 0 auto;
+    margin-top: 16px;
+  }
+}

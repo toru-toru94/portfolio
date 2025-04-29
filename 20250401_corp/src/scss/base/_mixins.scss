@@ -1,0 +1,12 @@
+@use 'base/_variables.scss' as *;
+@use 'sass:map';
+
+@mixin breakpoint($point) {
+  @if $point == mobile-l {
+    @media (min-width: 425px) and (max-width: 767px) { @content; }
+  } @else if $point == tablet {
+    @media (min-width: 768px) and (max-width: 1023px) { @content; }
+  } @else if $point == pc {
+    @media (min-width: 1024px) { @content; }
+  }
+}

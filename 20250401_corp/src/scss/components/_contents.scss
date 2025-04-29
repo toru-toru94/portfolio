@@ -1,0 +1,215 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_mixins.scss' as *;
+
+.about{
+  background: $color-secondary;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  @include breakpoint(tablet){
+    gap: 120px;
+    padding: 0 16px;
+  }
+  @include breakpoint(pc){
+    gap: 120px;
+  }
+  &::after{
+    content: '';
+    width: 0;
+    height: 0;
+    background: #fff;
+    display: block;
+    border-style: solid;
+    border-width: 40px 50vw 0 50vw;
+    border-color: $color-secondary transparent transparent transparent;
+    @include breakpoint(tablet){
+      border-width: 60px 165px 0 165px;
+      margin: -60px auto;
+    }
+    @include breakpoint(pc){
+      border-width: 60px 165px 0 165px;
+      margin: -60px auto;
+    }
+  }
+  &__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 44px;
+    @include breakpoint(tablet){
+      flex-direction: row;
+      justify-content: center;
+      align-items: start;
+      gap: 20px;
+    }
+    @include breakpoint(pc){
+      justify-content: center;
+      align-items: start;
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+  &__img{
+    width: 250px;
+    height: 250px;
+    max-width: 300px;
+    background-color: $color-primary;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint(tablet){
+      margin: 0;
+      width: 300px;
+      height: 300px;
+      max-width: 100%;
+    }
+    @include breakpoint(pc){
+      margin: 0;
+      width: 350px;
+      height: 350px;
+      max-width: 100%;
+    }
+    img{
+      width: 200px;
+      height: 155px;
+    }
+  }
+  &__text{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    table{
+      padding: 0 40px;
+      font-size: $font-size-sm;
+      font-weight: 600;
+      color: $color-text;
+      tr{
+        th,td{
+          text-align: left;
+          padding-bottom: 10px;
+          vertical-align: top;
+        }
+        th{
+          width: 20%;
+        }
+        td{
+          width: 80%;
+          line-height: 1.5;
+        }
+      }
+    }
+    .about__highlight{
+      text-align: center;
+      background-color: $color-accent;
+      padding: 8px;
+      font-size: $font-size-lg;
+      font-weight: 600;
+    }
+  }
+}
+
+.works{
+  background-color: $color-primary;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 0 auto;
+
+  &__swiper{
+    flex: 0 0 auto;
+    width: 100%;
+    // max-width: 320px;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 32px;
+    padding-bottom: 40px;
+    @include breakpoint(tablet) {
+      max-width: 680px
+    }
+    @include breakpoint(pc) {
+      max-width: 980px;
+    }
+  }
+
+  // スライドのスタイル
+
+  .swiper-slide {
+    width: 100%;      // スライドの幅を固定
+    transition: opacity 0.3s ease;
+  }
+
+  .swiper-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin-top: 20px;
+  }
+
+  .swiper-pause-btn {
+    position: relative;
+    background: transparent;
+    border: 2px solid #CCCCCC;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    &.is-paused {
+      border: 2px solid $color-accent-2nd;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 8px;
+      background-color: #CCCCCC;
+    }
+
+    &::before {
+      left: 7px;
+    }
+
+    &::after {
+      right: 7px;
+    }
+    &.is-paused::before,
+    &.is-paused::after {
+      content: '';
+      position: absolute;
+      top: 55%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      background: none;
+    }
+
+    &.is-paused::before {
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 8px solid $color-accent-2nd;
+    }
+
+    &.is-paused::after {
+      display: none; // 縦棒の片方を消す
+    }
+  }
+
+  .swiper-pagination {
+    position: relative;
+    margin: 0;
+    text-align: center;
+  }
+  .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto;
+    height: 100%;
+    bottom: 0;
+  }
+}

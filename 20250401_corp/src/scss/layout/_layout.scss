@@ -1,0 +1,21 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_mixins.scss' as *;
+
+html {
+	scroll-snap-type: y proximity;
+	scroll-padding-top: 56px;
+  @include breakpoint(pc){
+    scroll-padding-top: 80px;
+  }
+  scroll-behavior: smooth;
+}
+
+.bg-blue{
+  background-color: $color-secondary;
+}
+
+.wrapper{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 32px;
+}

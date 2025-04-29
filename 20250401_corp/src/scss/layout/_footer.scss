@@ -1,0 +1,80 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_mixins.scss' as *;
+
+.footer{
+  background-color: #F5F5F5;
+  color: #333;
+  &__inner{
+    margin: 0 auto;
+    padding: 24px 32px 0;
+    @include breakpoint(pc){
+      max-width: 980px;
+    }
+  }
+  &__logo{
+    font-size: $font-size-xl;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  &__nav{
+    width: 100%;
+  }
+  &__nav-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include breakpoint(pc){
+      flex-direction: row;
+      gap: 24px;
+    }
+  }
+  &__nav-item{
+    width: 100%;
+    font-size: $font-size-md;
+    color: #333;
+    font-weight: 500;
+    border-bottom: 1px solid #ddd;
+    padding: 16px 0;
+  }
+  &__nav-link{
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    &::after{
+      content: '';
+      width: 12px;
+      height: 12px;
+      border: 0;
+      border-top: solid 2px #333;
+      border-right: solid 2px #333;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    &:hover{
+      &::after{
+        transition: all 0.3s ease-in-out;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+.footer__copy{
+  height: 34px;
+  width: 100%;
+  font-size: $font-size-xs;
+  color: $color-primary;
+  background-color: #000;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

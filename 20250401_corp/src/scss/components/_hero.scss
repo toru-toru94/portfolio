@@ -1,0 +1,113 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_mixins.scss' as *;
+
+.hero{
+  &__inner{
+    height: 329px;
+    background-color: $color-accent;
+    padding: 32px 0;
+    @include breakpoint(tablet){
+      height: 360px;
+      background-color: antiquewhite;
+      padding: 0;
+    }
+    @include breakpoint(pc){
+      height: 360px;
+      padding: 0;
+    }
+  }
+  &__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    @include breakpoint(tablet){
+      flex-direction: unset;
+      justify-content: unset;
+      align-items: unset;
+      position: relative;
+      height: 100%;
+      min-width: 768px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    @include breakpoint(pc){
+      flex-direction: unset;
+      justify-content: unset;
+      align-items: unset;
+      position: relative;
+      height: 100%;
+      width: 954px;
+      margin: 0 auto;
+    }
+  }
+  &__title{
+    font-size: 24px;
+    font-weight: 600;
+    color: $color-text;
+    text-align: center;
+    line-height: 1.5;
+    width: 250px;
+    @include breakpoint(tablet){
+      position: absolute;
+      top: 70px;
+      left: 20px;
+      width: fit-content;
+      max-width: 100%;
+      font-size: 28px;
+    }
+    @include breakpoint(pc){
+      position: absolute;
+      top: 70px;
+      left: -30px;
+      width: fit-content;
+      max-width: 100%;
+      font-size: 39px;
+    }
+  }
+  &__text{
+    font-size: 14px;
+    color: $color-text;
+    text-align: center;
+    line-height: 1.5;
+    width: 181px;
+    @include breakpoint(tablet){
+      position: absolute;
+      top: 135px;
+      left: 35px;
+      width: fit-content;
+      max-width: 100%;
+      font-size: 16px;
+    }
+    @include breakpoint(pc){
+      position: absolute;
+      top: 135px;
+      left: 0;
+      width: fit-content;
+      max-width: 100%;
+      font-size: 21px;
+    }
+  }
+  &__img{
+    width: 200px;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      display: block;
+    }
+    @include breakpoint(tablet){
+      position: absolute;
+      bottom: 0;
+      right: 35px;
+      width: 370px;
+    }
+    @include breakpoint(pc){
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 410px;
+    }
+  }
+}

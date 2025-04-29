@@ -1,0 +1,51 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_mixins.scss' as *;
+
+.message{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  &__form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    @include breakpoint(tablet){
+      width: 680px;
+      margin: 0 auto;
+    }
+    @include breakpoint(pc){
+      width: 680px;
+      margin: 0 auto;
+    }
+  }
+  &__label{
+    font-size: $font-size-sm;
+    font-weight: 600;
+    color: #333;
+  }
+  &__must{
+    color: #FF0000;
+  }
+  &__notice{
+    color: #666;
+  }
+  &__input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  &__textarea{
+    width: 100%;
+    height: 188px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  input::placeholder,
+  textarea::placeholder {
+  color: #AAA;
+  font-size: $font-size-md;
+  opacity: 1;
+}
+}

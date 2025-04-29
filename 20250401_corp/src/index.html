@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STUDY | Portfolio</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <script type="" src="./js/bundle.js" defer></script>
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="header__logo"><a href="#">STUDY</a></h1>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item"><a href="#about" class="header__nav-link">ABOUT</a></li>
+          <li class="header__nav-item"><a href="#works" class="header__nav-link">WORKS</a></li>
+          <li class="header__nav-item"><a href="#news" class="header__nav-link">NEWS</a></li>
+          <li class="header__nav-item"><a href="#message" class="header__nav-link">MESSAGE</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- メインコンテンツ -->
+  <main class="main">
+
+    <!-- ヒーロー -->
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__box">
+          <h2 class="hero__title">「つくる人」として、次のステップへ。</h2>
+          <div class="hero__img">
+            <img src="./assets/images/top/hero.svg" alt="ヒーロービジュアル" />
+          </div>
+            <p class="hero__text">一歩ずつ、だけど確実に、できることを増やしていく。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+      <h2 class="section-title">ABOUT</h2>
+      <div class="about__content">
+        <div class="about__img">
+          <img src="./assets/images/top/thumb.svg" alt="自己紹介画像" />
+        </div>
+        <div class="about__text">
+          <table>
+            <tr>
+              <th>名前</th>
+              <td>萩原 亨 / Toru Hagiwara</td>
+            </tr>
+            <tr>
+              <th>職種</th>
+              <td>Web・スマホ開発ディレクター</td>
+            </tr>
+            <tr>
+              <th>目標</th>
+              <td>フロントエンジニアへのキャリアチェンジ</td>
+            </tr>
+            <tr>
+            </table>
+            <p class="about__highlight">「つくる人」として、次のステップへ。</p>
+            <table>
+              <th>スキル</th>
+              <td>HTML / SCSS / JavaScript（基礎） / Gulp</td>
+            </tr>
+            <tr>
+              <th>学習中</th>
+              <td>アクセシビリティ / Vue.js / React / 環境構築</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKS -->
+    <section id="works" class="works wrapper">
+      <h2 class="section-title">WORKS</h2>
+      <div class="swiper works__swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide works__item">
+            <img src="https://placehold.jp/3d4070/ffffff/310x160.png?text=1%E6%9E%9A%E7%9B%AE" alt="作品1" />
+          </div>
+          <div class="swiper-slide works__item">
+            <img src="https://placehold.jp/3d4070/ffffff/310x160.png?text=2%E6%9E%9A%E7%9B%AE" alt="作品2" />
+          </div>
+          <div class="swiper-slide works__item">
+            <img src="https://placehold.jp/3d4070/ffffff/310x160.png?text=3%E6%9E%9A%E7%9B%AE" alt="作品3" />
+          </div>
+          <div class="swiper-slide works__item">
+            <img src="https://placehold.jp/3d4070/ffffff/310x160.png?text=4%E6%9E%9A%E7%9B%AE" alt="作品4" />
+          </div>
+        </div>
+        <div class="swiper-controls">
+          <div class="swiper-pagination"></div>
+          <button id="pauseBtn" class="swiper-pause-btn" aria-label="スライダーを停止"></button>
+        </div>
+
+        </div>
+      <button type="button" class="c-btn"><a href="#">もっとみる</a></button>
+    </section>
+
+    <!-- NEWS -->
+    <section id="news" class="news bg-blue">
+      <h2 class="section-title">NEWS</h2>
+      <ul class="news__list">
+        <li class="news__item">
+          <div class="news__label-wrapper">
+            <span class="news__date">2025年4月1日</span>
+            <span class="news__label news__label--info">お知らせ</span>
+          </div>
+          <p class="news__text">ポートフォリオサイト「STUDY」を公開</p>
+        </li>
+        <li class="news__item">
+          <div class="news__label-wrapper">
+            <span class="news__date">2025年4月1日</span>
+            <span class="news__label news__label--update">更新</span>
+          </div>
+          <p class="news__text">サイト内容を一部修正</p>
+        </li>
+        <li class="news__item">
+          <div class="news__label-wrapper">
+            <span class="news__date">2025年4月1日</span>
+            <span class="news__label news__label--info">お知らせ</span>
+          </div>
+          <p class="news__text">お知らせのテキストお知らせのテキストお知らせのテキストお知らせのテキストお知らせのテキストお知らせのテキストお知らせのテキスト</p>
+        </li>
+        <li class="news__item">
+          <div class="news__label-wrapper">
+            <span class="news__date">2025年4月1日</span>
+            <span class="news__label news__label--info">お知らせ</span>
+          </div>
+          <p class="news__text">お知らせのテキストお知らせのテキストお知らせのテキストお知らせのテキストお知らせのテキストお知らせのテキストお知らせのテキスト</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- MESSAGE -->
+    <section id="message" class="message wrapper">
+      <h2 class="section-title">MESSAGE</h2>
+      <form class="message__form">
+        <label class="message__label" for="name">お名前<span class="message__must">*</span></label>
+        <input id="name" type="text" class="message__input" placeholder="お名前を入力してください" required />
+
+        <label class="message__label" for="email">メールアドレス<span class="message__must">*</span></label>
+        <input id="email" type="email" class="message__input" placeholder="メールアドレスを入力してください" required />
+
+        <label class="message__label" for="tel">電話番号<span class="message__must">*</span><span class="message__notice">ハイフンなし</span></label>
+        <input id="tel" type="tel" class="message__input" placeholder="電話番号を入力してください" required />
+
+        <label class="message__label" for="contact">お問い合わせ内容<span class="message__must">*</span></label>
+        <textarea id="contact" class="message__textarea" placeholder="お問い合わせ内容を入力してください" required></textarea>
+
+        <button type="submit" class="c-btn">送信する</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__logo">STUDY</div>
+      <nav class="footer__nav">
+        <ul class="footer__nav-list">
+          <li class="footer__nav-item"><a href="#about" class="footer__nav-link">ABOUT ME</a></li>
+          <li class="footer__nav-item"><a href="#works" class="footer__nav-link">WORKS</a></li>
+          <li class="footer__nav-item"><a href="#news" class="footer__nav-link">NEWS</a></li>
+          <li class="footer__nav-item"><a href="#message" class="footer__nav-link">MESSAGE</a></li>
+        </ul>
+      </nav>
+    </div>
+    <small class="footer__copy">&copy; 2025 STUDY. All Rights Reserved.</small>
+  </footer>
+
+</body>
+</html>

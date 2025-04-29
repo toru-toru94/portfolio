@@ -1,0 +1,62 @@
+@use 'base/_variables.scss' as *;    // 変数（色、フォントサイズ、ブレイクポイントなど）
+@use 'base/_mixins.scss' as *;
+
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background-color: $color-primary;
+  &__inner{
+    height: 56px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include breakpoint(pc){
+      height: 80px;
+      padding: 0 24px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+  }
+  &__logo{
+    align-items: center;
+    color: $color-accent-2nd;
+    font-size: $font-size-logo-sp;
+    font-weight: 600;
+    @include breakpoint(pc){
+      font-size: $font-size-logo-pc;
+    }
+    a{
+      text-decoration: none;
+      color: $color-accent-2nd;
+    }
+  }
+
+  &__nav-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    @include breakpoint(pc){
+      gap: 18px;
+    }
+  }
+  &__nav-item{
+    position: relative;
+  }
+  &__nav-link{
+    color: $color-text;
+    font-size: $font-size-xs;
+    font-weight: 600;
+    text-decoration: none;
+    @include breakpoint(pc){
+      font-size: $font-size-md;
+    }
+    &:hover{
+      color: $color-accent-2nd;
+      padding-bottom: 10px;
+      border-bottom: 2px solid $color-accent-2nd;
+    }
+  }
+}
