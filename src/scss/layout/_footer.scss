@@ -56,12 +56,6 @@
       bottom: 0;
       margin: auto;
     }
-    &:hover{
-      &::after{
-        transition: all 0.3s ease-in-out;
-        transform: rotate(-45deg);
-      }
-    }
   }
 }
 

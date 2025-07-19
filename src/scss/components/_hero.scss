@@ -8,7 +8,7 @@
     padding: 32px 0;
     @include breakpoint(tablet){
       height: 360px;
-      background-color: antiquewhite;
+      // background-color: antiquewhite;
       padding: 0;
     }
     @include breakpoint(pc){

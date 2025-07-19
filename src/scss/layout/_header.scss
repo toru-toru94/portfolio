@@ -60,3 +60,9 @@
     }
   }
 }
+
+.header__nav-current {
+  color: $color-accent-2nd;
+  padding-bottom: 10px;
+  border-bottom: 2px solid $color-accent-2nd;
+}
