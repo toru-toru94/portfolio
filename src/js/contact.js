@@ -3,19 +3,19 @@ export function initContactForm(scriptURL) {
   if (!form) return;
 
   form.addEventListener('submit', e => {
-    e.preventDefault();
+    e.preventDefault();  // デフォルトのフォーム送信を無効化
 
     fetch(scriptURL, {
       method: 'POST',
       mode: 'cors',
-      body: new FormData(form)  // フォームデータ送信
+      body: new FormData(form)
     })
-      .then(res => res.json())  // JSONとして受け取る
+      .then(res => res.json())  // JSONとして処理
       .then(result => {
+        console.log('Response:', result);
         if (result.status === 'success') {
           window.location.href = '/thanks.html';
         } else {
-          console.warn('Unexpected response:', result);
           alert('送信に失敗しました。');
         }
       })
