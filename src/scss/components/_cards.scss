@@ -5,12 +5,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 40px;
-  // margin-top: 50px;
   &__item{
     position: relative;
     background: #fff;
-    // padding: 20px;
-    // margin: 20px;
+    border: solid 2px #d0d0d0;
+    border-radius: 10px;
+    overflow: hidden;
   }
   &__link{
     &::before{
