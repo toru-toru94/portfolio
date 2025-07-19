@@ -117,6 +117,13 @@
   flex-direction: column;
   gap: 40px;
   margin: 0 auto;
+  &__item img{
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    object-position: top center;
+
+  }
 
   &__swiper{
     flex: 0 0 auto;
