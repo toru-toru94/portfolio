@@ -496,7 +496,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider.js */ \"./src/js/slider.js\");\n/* harmony import */ var _contact_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact.js */ \"./src/js/contact.js\");\n\n\nvar scriptURL = 'https://script.google.com/macros/s/AKfycbz-_d4OV_66rna2Y4Iy7C1GbM0RzbEREPoDYEBLG8OxpggyAVyLBXLljscEaeasV4AmRA/exec';\ndocument.addEventListener('DOMContentLoaded', function () {\n  (0,_slider_js__WEBPACK_IMPORTED_MODULE_0__.initWorksSlider)();\n  (0,_contact_js__WEBPACK_IMPORTED_MODULE_1__.initContactForm)(scriptURL);\n});\n\n//# sourceURL=webpack://20250315_portfolio/./src/js/main.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider.js */ \"./src/js/slider.js\");\n/* harmony import */ var _contact_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact.js */ \"./src/js/contact.js\");\n\n\nvar scriptURL = 'https://script.google.com/macros/s/AKfycbwsSI8I6a-2pOw85QiYHkedQDKPNiE3_k62TFWtfoWBCpeELW1KMgypiQIDEetcFvvdNw/exec';\ndocument.addEventListener('DOMContentLoaded', function () {\n  (0,_slider_js__WEBPACK_IMPORTED_MODULE_0__.initWorksSlider)();\n  (0,_contact_js__WEBPACK_IMPORTED_MODULE_1__.initContactForm)(scriptURL);\n});\n\n//# sourceURL=webpack://20250315_portfolio/./src/js/main.js?\n}");
 
 /***/ }),
 
