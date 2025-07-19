@@ -53,3 +53,4 @@ gulp.task("serve", function () {
 
 // デフォルトタスク
 gulp.task("default", gulp.series("html", "styles", "scripts", "assets", "serve"));
+gulp.task("build", gulp.series("html", "styles", "scripts", "assets"));

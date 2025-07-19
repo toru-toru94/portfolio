@@ -1,0 +1,61 @@
+.
+├── dist
+│   ├── assets
+│   │   └── images
+│   │       ├── common
+│   │       │   ├── logo.png
+│   │       │   └── thumbSite.png
+│   │       └── top
+│   │           ├── hero.svg
+│   │           └── thumb.svg
+│   ├── css
+│   │   └── style.css
+│   ├── index.html
+│   ├── js
+│   │   └── bundle.js
+│   └── works.html
+├── gulpfile.js
+├── package-lock.json
+├── package.json
+├── src
+│   ├── assets
+│   │   └── images
+│   │       ├── common
+│   │       │   ├── logo.png
+│   │       │   └── thumbSite.png
+│   │       └── top
+│   │           ├── hero.svg
+│   │           └── thumb.svg
+│   ├── index.html
+│   ├── js
+│   │   ├── main.js
+│   │   └── slider.js
+│   ├── scss
+│   │   ├── base
+│   │   │   ├── _base.scss
+│   │   │   ├── _functions.scss
+│   │   │   ├── _mixins.scss
+│   │   │   ├── _reset.scss
+│   │   │   ├── _typography.scss
+│   │   │   └── _variables.scss
+│   │   ├── components
+│   │   │   ├── _buttons.scss
+│   │   │   ├── _cards.scss
+│   │   │   ├── _contact.scss
+│   │   │   ├── _contents.scss
+│   │   │   ├── _faq.scss
+│   │   │   ├── _hero.scss
+│   │   │   ├── _news.scss
+│   │   │   └── _title.scss
+│   │   ├── layout
+│   │   │   ├── _footer.scss
+│   │   │   ├── _header.scss
+│   │   │   └── _layout.scss
+│   │   ├── style.scss
+│   │   └── vendors
+│   │       └── _normalize.scss
+│   └── works.html
+├── tree.txt
+└── webpack.config.js
+
+19 directories, 40 files
