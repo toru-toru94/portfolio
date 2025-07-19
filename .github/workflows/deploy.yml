@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build and Deploy
 
 on:
   push:
@@ -21,14 +21,22 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build project
+      # ポータルサイトをビルド
+      - name: Build portal site
         run: npx gulp build
 
+      # shops サイトがある場合もビルド
+      - name: Build shops site
+        run: |
+          if [ -d "shops/src" ]; then
+            npx gulp build --site shops || echo "No shops site to build"
+          fi
+
+      # デプロイ (dist/ をルート、shops/dist/ を /shops/ に配置)
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./portfolio/dist
           publish_branch: gh-pages
-          destination_dir: .
+          publish_dir: .  # ルートに dist/ と shops/ の中身を配置
           force_orphan: true
