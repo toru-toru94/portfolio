@@ -145,16 +145,16 @@
       <h2 class="section-title">MESSAGE</h2>
       <form class="message__form" action="https://script.google.com/macros/s/AKfycbwo1U81uRZQ8gX06rYvKiDjZQ3Kz9f4U8-s_ZJpMdqgkA8y785j7DqmAXwGURsdUg91aQ/exec" method="POST">
         <label class="message__label" for="name">お名前<span class="message__must">*</span></label>
-        <input id="name" type="text" class="message__input" placeholder="お名前を入力してください" required />
+        <input id="name" type="text" name="name" class="message__input" placeholder="お名前を入力してください" required />
 
         <label class="message__label" for="email">メールアドレス<span class="message__must">*</span></label>
-        <input id="email" type="email" class="message__input" placeholder="メールアドレスを入力してください" required />
+        <input id="email" type="email" name="email" class="message__input" placeholder="メールアドレスを入力してください" required />
 
         <label class="message__label" for="tel">電話番号<span class="message__must">*</span><span class="message__notice">ハイフンなし</span></label>
-        <input id="tel" type="tel" class="message__input" placeholder="電話番号を入力してください" required />
+        <input id="tel" type="tel" name="tel" class="message__input" placeholder="電話番号を入力してください" required />
 
         <label class="message__label" for="contact">お問い合わせ内容<span class="message__must">*</span></label>
-        <textarea id="contact" class="message__textarea" placeholder="お問い合わせ内容を入力してください" required></textarea>
+        <textarea id="contact" name="contact" class="message__textarea" placeholder="お問い合わせ内容を入力してください" required></textarea>
 
         <button type="submit" class="c-btn">送信する</button>
       </form>
