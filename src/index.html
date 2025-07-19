@@ -182,13 +182,14 @@
 </body>
 <script>
 document.getElementById('contactForm').addEventListener('submit', function (e) {
-  e.preventDefault(); // デフォルト送信を止める
+  e.preventDefault();
 
   const form = e.target;
 
   fetch(form.action, {
     method: 'POST',
-    body: new FormData(form)
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' } // これを追加
   })
   .then(response => {
     if (response.ok) {
