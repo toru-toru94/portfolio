@@ -143,7 +143,7 @@
     <!-- MESSAGE -->
     <section id="message" class="message wrapper">
       <h2 class="section-title">MESSAGE</h2>
-      <form class="message__form" action="https://formspree.io/f/xpwlqaek?next=https://toru-toru94.github.io/portfolio/thanks.html" method="POST">
+      <form id="contactForm" class="message__form" action="https://formspree.io/f/xpwlqaek" method="POST">
         <label class="message__label" for="name">お名前<span class="message__must">*</span></label>
         <input id="name" type="text" name="name" class="message__input" placeholder="お名前を入力してください" required />
 
@@ -155,6 +155,7 @@
 
         <label class="message__label" for="contact">お問い合わせ内容<span class="message__must">*</span></label>
         <textarea id="contact" name="contact" class="message__textarea" placeholder="お問い合わせ内容を入力してください" required></textarea>
+        <input type="text" name="_gotcha" style="display:none">
 
         <button type="submit" class="c-btn">送信する</button>
       </form>
@@ -179,4 +180,26 @@
   </footer>
 
 </body>
+<script>
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // デフォルト送信を止める
+
+  const form = e.target;
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form)
+  })
+  .then(response => {
+    if (response.ok) {
+      window.location.href = 'https://toru-toru94.github.io/portfolio/thanks.html';
+    } else {
+      alert('送信に失敗しました。もう一度お試しください。');
+    }
+  })
+  .catch(() => {
+    alert('通信エラーが発生しました。');
+  });
+});
+</script>
 </html>
