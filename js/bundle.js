@@ -480,23 +480,13 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
 
 /***/ }),
 
-/***/ "./src/js/contact.js":
-/*!***************************!*\
-  !*** ./src/js/contact.js ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   initContactForm: () => (/* binding */ initContactForm)\n/* harmony export */ });\nfunction initContactForm(scriptURL) {\n  var form = document.getElementById('contactForm');\n  if (!form) return;\n  form.addEventListener('submit', function (e) {\n    e.preventDefault();\n    fetch(scriptURL, {\n      method: 'POST',\n      mode: 'cors',\n      body: new FormData(form) // フォームデータ送信\n    }).then(function (res) {\n      return res.json();\n    }) // JSONとして受け取る\n    .then(function (result) {\n      if (result.status === 'success') {\n        window.location.href = '/thanks.html';\n      } else {\n        console.warn('Unexpected response:', result);\n        alert('送信に失敗しました。');\n      }\n    })[\"catch\"](function (error) {\n      console.error(error);\n      alert('通信エラーが発生しました。');\n    });\n  });\n}\n\n//# sourceURL=webpack://20250315_portfolio/./src/js/contact.js?\n}");
-
-/***/ }),
-
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider.js */ \"./src/js/slider.js\");\n/* harmony import */ var _contact_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact.js */ \"./src/js/contact.js\");\n\n\nvar scriptURL = 'https://script.google.com/macros/s/AKfycbyQC6ftuISZlUmARB-xM9wW2-Sr9BG_d2fLNBuXRvhVavNY2nhWrxMBnQRXOSfcxStWQQ/exec';\ndocument.addEventListener('DOMContentLoaded', function () {\n  (0,_slider_js__WEBPACK_IMPORTED_MODULE_0__.initWorksSlider)();\n  (0,_contact_js__WEBPACK_IMPORTED_MODULE_1__.initContactForm)(scriptURL);\n});\n\n//# sourceURL=webpack://20250315_portfolio/./src/js/main.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider.js */ \"./src/js/slider.js\");\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  (0,_slider_js__WEBPACK_IMPORTED_MODULE_0__.initWorksSlider)();\n});\n\n//# sourceURL=webpack://20250315_portfolio/./src/js/main.js?\n}");
 
 /***/ }),
 
