@@ -1,14 +1,16 @@
-name: Build and Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - master
+      - master  # masterにpushされたら実行
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: portfolio  # ここでpackage.jsonのある場所を指定
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -21,22 +23,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # ポータルサイトをビルド
-      - name: Build portal site
+      - name: Build project
         run: npx gulp build
 
-      # shops サイトがある場合もビルド
-      - name: Build shops site
-        run: |
-          if [ -d "shops/src" ]; then
-            npx gulp build --site shops || echo "No shops site to build"
-          fi
-
-      # デプロイ (dist/ をルート、shops/dist/ を /shops/ に配置)
-      - name: Deploy to GitHub Pages
+      - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: .  # ルートに dist/ と shops/ の中身を配置
-          force_orphan: true
+          publish_dir: portfolio/dist  # ビルド結果をデプロイ
