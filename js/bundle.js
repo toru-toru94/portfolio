@@ -480,13 +480,23 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
 
 /***/ }),
 
+/***/ "./src/js/contact.js":
+/*!***************************!*\
+  !*** ./src/js/contact.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   initContactForm: () => (/* binding */ initContactForm)\n/* harmony export */ });\nfunction initContactForm(scriptURL) {\n  var form = document.getElementById('contactForm');\n  if (!form) return;\n  form.addEventListener('submit', function (e) {\n    e.preventDefault();\n    var formData = new FormData(form);\n    fetch(scriptURL, {\n      method: 'POST',\n      body: formData\n    }).then(function (response) {\n      return response.text();\n    }) // レスポンスをテキストで受け取る\n    .then(function (result) {\n      if (result.trim() === 'success') {\n        // \"success\" ならリダイレクト\n        window.location.href = '/thanks.html';\n      } else {\n        // 予期しないレスポンスが返った場合（古いデプロイなど）\n        console.warn('Unexpected response:', result);\n        alert('送信処理で問題が発生しました。');\n      }\n    })[\"catch\"](function (error) {\n      alert('通信エラーが発生しました。');\n      console.error(error);\n    });\n  });\n}\n\n//# sourceURL=webpack://20250315_portfolio/./src/js/contact.js?\n}");
+
+/***/ }),
+
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider.js */ \"./src/js/slider.js\");\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  (0,_slider_js__WEBPACK_IMPORTED_MODULE_0__.initWorksSlider)();\n});\n\n//# sourceURL=webpack://20250315_portfolio/./src/js/main.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider.js */ \"./src/js/slider.js\");\n/* harmony import */ var _contact_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact.js */ \"./src/js/contact.js\");\n\n\nvar scriptURL = 'https://script.google.com/macros/s/AKfycbz-_d4OV_66rna2Y4Iy7C1GbM0RzbEREPoDYEBLG8OxpggyAVyLBXLljscEaeasV4AmRA/exec';\ndocument.addEventListener('DOMContentLoaded', function () {\n  (0,_slider_js__WEBPACK_IMPORTED_MODULE_0__.initWorksSlider)();\n  (0,_contact_js__WEBPACK_IMPORTED_MODULE_1__.initContactForm)(scriptURL);\n});\n\n//# sourceURL=webpack://20250315_portfolio/./src/js/main.js?\n}");
 
 /***/ }),
 
