@@ -14,7 +14,7 @@ gulp.task("html", function () {
 
 // SCSS を CSS に変換 & 圧縮
 gulp.task("styles", function () {
-  return gulp.src("src/scss/style.scss")
+  return gulp.src(["src/scss/*.scss", "!src/scss/_*.scss"]) // すべてのscssを対象、パーシャルは除外
     .pipe(sass({
       includePaths: [path.resolve(__dirname, 'node_modules')]
     }).on("error", sass.logError))
@@ -22,6 +22,7 @@ gulp.task("styles", function () {
     .pipe(gulp.dest("dist/css/"))
     .pipe(browserSync.stream());
 });
+
 
 // JavaScript を圧縮
 gulp.task("scripts", function () {
@@ -46,8 +47,8 @@ gulp.task("serve", function () {
   });
 
   gulp.watch("src/*.html", gulp.series("html")).on("change", browserSync.reload);
-  gulp.watch("src/scss/**/*.scss", gulp.series("styles"));
-  gulp.watch("src/*.js", gulp.series("scripts")).on("change", browserSync.reload);
+  gulp.watch("src/scss/**/*.scss", gulp.series("styles"));  // 変更を監視
+  gulp.watch("src/js/**/*.js", gulp.series("scripts")).on("change", browserSync.reload);
   gulp.watch("src/assets/**/*", gulp.series("assets")).on("change", browserSync.reload);
 });
 
