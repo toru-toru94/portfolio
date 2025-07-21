@@ -480,13 +480,23 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
 
 /***/ }),
 
+/***/ "./src/js/contact.js":
+/*!***************************!*\
+  !*** ./src/js/contact.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   initWorksContact: () => (/* binding */ initWorksContact)\n/* harmony export */ });\nfunction initWorksContact() {\n  document.getElementById('contactForm').addEventListener('submit', function (e) {\n    e.preventDefault();\n    var form = e.target;\n    fetch(form.action, {\n      method: 'POST',\n      body: new FormData(form),\n      headers: {\n        'Accept': 'application/json'\n      }\n    }).then(function (response) {\n      if (response.ok) {\n        window.location.href = 'https://toru-toru94.github.io/portfolio/thanks.html';\n      } else {\n        alert('送信に失敗しました。もう一度お試しください。');\n      }\n    })[\"catch\"](function () {\n      alert('通信エラーが発生しました。');\n    });\n  });\n}\n\n//# sourceURL=webpack://20250315_portfolio/./src/js/contact.js?\n}");
+
+/***/ }),
+
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider.js */ \"./src/js/slider.js\");\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  (0,_slider_js__WEBPACK_IMPORTED_MODULE_0__.initWorksSlider)();\n});\n\n//# sourceURL=webpack://20250315_portfolio/./src/js/main.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _slider_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./slider.js */ \"./src/js/slider.js\");\n/* harmony import */ var _contact_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./contact.js */ \"./src/js/contact.js\");\n\n\ndocument.addEventListener('DOMContentLoaded', function () {\n  (0,_slider_js__WEBPACK_IMPORTED_MODULE_0__.initWorksSlider)();\n  (0,_contact_js__WEBPACK_IMPORTED_MODULE_1__.initWorksContact)();\n});\n\n//# sourceURL=webpack://20250315_portfolio/./src/js/main.js?\n}");
 
 /***/ }),
 
