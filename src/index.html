@@ -62,10 +62,10 @@
               <th>目標</th>
               <td>フロントエンジニアへのキャリアチェンジ</td>
             </tr>
+          </table>
+          <p class="about__highlight">「つくる人」として、次のステップへ。</p>
+          <table>
             <tr>
-            </table>
-            <p class="about__highlight">「つくる人」として、次のステップへ。</p>
-            <table>
               <th>スキル</th>
               <td>HTML / SCSS / JavaScript（基礎） / Gulp</td>
             </tr>
@@ -144,21 +144,21 @@
     <section id="message" class="message wrapper">
       <h2 class="section-title">MESSAGE</h2>
       <form id="contactForm" class="message__form" action="https://formspree.io/f/xpwlqaek" method="POST">
-        <label class="message__label" for="name">お名前<span class="message__must">*</span></label>
-        <input id="name" type="text" name="name" class="message__input" placeholder="お名前を入力してください" required />
+      <label class="message__label" for="name">お名前<span class="message__must">*</span></label>
+      <input id="name" type="text" name="name" class="message__input" placeholder="お名前を入力してください" required autocomplete="name" />
 
-        <label class="message__label" for="email">メールアドレス<span class="message__must">*</span></label>
-        <input id="email" type="email" name="email" class="message__input" placeholder="メールアドレスを入力してください" required />
+      <label class="message__label" for="email">メールアドレス<span class="message__must">*</span></label>
+      <input id="email" type="email" name="email" class="message__input" placeholder="メールアドレスを入力してください" required autocomplete="email" />
 
-        <label class="message__label" for="tel">電話番号<span class="message__must">*</span><span class="message__notice">ハイフンなし</span></label>
-        <input id="tel" type="tel" name="tel" class="message__input" placeholder="電話番号を入力してください" required />
+      <label class="message__label" for="tel">電話番号<span class="message__must">*</span><span class="message__notice">ハイフンなし</span></label>
+      <input id="tel" type="tel" name="tel" class="message__input" placeholder="電話番号を入力してください" required autocomplete="tel" />
 
-        <label class="message__label" for="contact">お問い合わせ内容<span class="message__must">*</span></label>
-        <textarea id="contact" name="contact" class="message__textarea" placeholder="お問い合わせ内容を入力してください" required></textarea>
-        <input type="text" name="_gotcha" style="display:none">
+      <label class="message__label" for="contact">お問い合わせ内容<span class="message__must">*</span></label>
+      <textarea id="contact" name="contact" class="message__textarea" placeholder="お問い合わせ内容を入力してください" required autocomplete="off"></textarea>
 
-        <button type="submit" class="c-btn">送信する</button>
-      </form>
+      <input type="text" name="_gotcha" style="display:none">
+      <button type="submit" class="c-btn">送信する</button>
+    </form>
     </section>
 
   </main>
