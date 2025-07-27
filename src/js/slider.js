@@ -6,6 +6,17 @@ import 'swiper/css/pagination';
 Swiper.use([Autoplay, Pagination]);
 
 export function initWorksSlider() {
+  const swiperWrapper = document.querySelector('.works__swiper .swiper-wrapper');
+  if (!swiperWrapper) return;
+
+  const slides = swiperWrapper.querySelectorAll('.swiper-slide');
+
+  // 元のスライドを丸ごと複製して2倍にする
+  slides.forEach(slide => {
+    const clone = slide.cloneNode(true);
+    swiperWrapper.appendChild(clone);
+  });
+
   const swiper = new Swiper('.works__swiper', {
     loop: true,
     slidesPerView: 1.2,
