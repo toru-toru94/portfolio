@@ -9,10 +9,10 @@ export function initWorksSlider() {
   const swiperWrapper = document.querySelector('.works__swiper .swiper-wrapper');
   if (!swiperWrapper) return;
 
-  const slides = swiperWrapper.querySelectorAll('.swiper-slide');
+  const originalSlides = swiperWrapper.querySelectorAll('.swiper-slide');
 
-  // 元のスライドを丸ごと複製して2倍にする
-  slides.forEach(slide => {
+  // 元スライドを丸ごと複製して2倍にする（Swiperのループ要件を満たす）
+  originalSlides.forEach(slide => {
     const clone = slide.cloneNode(true);
     swiperWrapper.appendChild(clone);
   });
@@ -28,7 +28,15 @@ export function initWorksSlider() {
     },
     pagination: {
       el: '.swiper-pagination',
-      clickable: true
+      clickable: true,
+      type: 'bullets',
+      renderBullet: (index, className) => {
+        // ドットは「元のスライド数」分だけ生成
+        if (index < originalSlides.length) {
+          return `<span class="${className}"></span>`;
+        }
+        return '';
+      }
     },
     breakpoints: {
       768: {
