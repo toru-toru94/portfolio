@@ -11,7 +11,7 @@ export function initWorksSlider() {
 
   const originalSlides = swiperWrapper.querySelectorAll('.swiper-slide');
 
-  // 元スライドを丸ごと複製して2倍にする（Swiperのループ要件を満たす）
+  // 元スライドを丸ごと複製して2倍にする
   originalSlides.forEach(slide => {
     const clone = slide.cloneNode(true);
     swiperWrapper.appendChild(clone);
@@ -31,7 +31,6 @@ export function initWorksSlider() {
       clickable: true,
       type: 'bullets',
       renderBullet: (index, className) => {
-        // ドットは「元のスライド数」分だけ生成
         if (index < originalSlides.length) {
           return `<span class="${className}"></span>`;
         }
@@ -48,6 +47,23 @@ export function initWorksSlider() {
         spaceBetween: 40
       }
     }
+  });
+
+  // カレントドットを元スライド数基準で同期
+  swiper.on('slideChange', () => {
+    const bullets = swiper.pagination.bullets;
+    if (!bullets || bullets.length === 0) return;
+
+    // SwiperのactiveIndexはクローンも含むので、元スライド数で割って正規化
+    const realIndex = swiper.realIndex % originalSlides.length;
+
+    bullets.forEach((bullet, idx) => {
+      if (idx === realIndex) {
+        bullet.classList.add('swiper-pagination-bullet-active');
+      } else {
+        bullet.classList.remove('swiper-pagination-bullet-active');
+      }
+    });
   });
 
   const pauseBtn = document.getElementById('pauseBtn');
